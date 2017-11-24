@@ -10,14 +10,11 @@ import {
   Text,
   View
 } from 'react-native';
-import ListViewDemo from './components/ListViewDemo'
-import Login from './components/Login'
-import AppList from './components/AppList'
-import FlatListDemo from './components/FlatListDemo'
-import DealList from './components/DealList'
-import Test from './components/Test'
-import ajax from './ajax';
+import ContentList from './components/ContentList'
+import SearchBox from './components/SearchBox'
 
+
+import ajax from './ajax';
 
 export default class App extends Component {
 
@@ -28,7 +25,7 @@ export default class App extends Component {
 
   async componentDidMount() {
     //this.animateTitle();
-    const deals = await ajax.fetchInitialDeals();
+    const deals = await ajax.fetchInitialContentList();
     this.setState({ deals });
   }
 
@@ -37,10 +34,11 @@ export default class App extends Component {
 
     return (
       <View style={styles.container1}>
-        <Text style={styles.welcome}>
-          Welcome to React Native...
+        <Text style={styles.title}>
+          PowerApps FAQs
         </Text>
-        <DealList deals={this.state.deals} onItemPress={this.setCurrentDeal} />
+        <SearchBox />
+        <ContentList deals={this.state.deals} onItemPress={this.setCurrentDeal} />
 
       </View>
     );
@@ -54,10 +52,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  title: {
     fontSize: 20,
-    textAlign: 'center',
     margin: 10,
+    marginLeft: 15,
+    marginTop: 20,
+
   },
   instructions: {
     textAlign: 'center',
