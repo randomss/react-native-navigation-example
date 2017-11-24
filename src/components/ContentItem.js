@@ -1,26 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  View, Text, Image,
+  TouchableOpacity, StyleSheet,
+  Linking
+} from 'react-native';
+import ParsedText from 'react-native-parsed-text';
 
-import { priceDisplay } from '../util';
+
 
 class DealItem extends React.Component {
   static propTypes = {
     deal: PropTypes.object.isRequired,
     onPress: PropTypes.func.isRequired,
   };
+  handleUrlPress(url) {
+   Linking.openURL(url);
+ }
+
+  handlePhonePress(phone) {
+   Linking.openURL(`tel:${phone}`);
+ }
+
+  handleEmailPress(email) {
+   Linking.openURL(`mailto:${email}`);
+ }
   handlePress = () => {
     this.props.onPress(this.props.deal.key);
   };
+
   render() {
     const { deal } = this.props;
     return (
       <TouchableOpacity style={styles.deal} onPress={this.handlePress}>
         <View style={styles.info}>
           <Text style={styles.title}>{deal.title}</Text>
-          <View style={styles.footer}>
-            <Text style={styles.description}>{(deal.description)}</Text>
-          </View>
+          <ParsedText
+            style={styles.text}
+            parse={
+              [
+                {type: 'url',                       style: styles.url, onPress: this.handleUrlPress},
+                {type: 'phone',                     style: styles.url, onPress: this.handlePhonePress},
+                {type: 'email',                     style: styles.url, onPress: this.handleEmailPress},
+              ]
+            }
+            childrenProps={{allowFontScaling: false}}
+          >
+           { (deal.description)}
+        </ParsedText>
         </View>
       </TouchableOpacity>
     );
@@ -58,6 +85,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 10,
     marginBottom: 5,
+  },
+  url: {
+    color: 'blue',
   },
 });
 

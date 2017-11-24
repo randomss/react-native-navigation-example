@@ -6,14 +6,12 @@
   {
     "key":"caa2365cf9d5d80d62099e3456c9e0b2",
     "title":"What is the pricing and licensing for PowerApps?",
-    "description":"Basic version is included in Office 365 and Dynamics 365 licensing. You can also buy it standalone. For learning more, please go to https://powerapps.com ",
+    "description":"Basic version is included in Office 365 and Dynamics 365 licensing. You can also buy it standalone. For learning more, please go to https://powerapps.com or http://flow.microsoft.com ",
   },
   {
     "key":"64f2e2859c9438b3b5e04ce28d6c0cb7",
-    "title":"Totem Godess of Divine Self Love - Plush Creature Art",
-    "price":14000,
-    "cause":{"name":"Global Warming\t"},
-    "media":["https://res.cloudinary.com/bakesale/image/upload/h_150,c_fill/plush1_z5vjbj","https://res.cloudinary.com/bakesale/image/upload/h_150,c_fill/plush2_z9tkjr","https://res.cloudinary.com/bakesale/image/upload/h_150,c_fill/plush3_qfq8bt"]
+    "title":"How can I get support for PowerApps?",
+    "description":"Call our support staff at 425-208-6680 or email us at support@powerapps.com ",
   },
   {"key":"f3433a7cd00956fa9f81922a14265eb6","title":"Synergy of the Rain Sprits - Mixed Media Fiber Art","price":40000,"cause":{"name":"Global Warming\t"},"media":["https://res.cloudinary.com/bakesale/image/upload/h_150,c_fill/fiber1_i6a61b","https://res.cloudinary.com/bakesale/image/upload/h_150,c_fill/fiber3_a7viqg","https://res.cloudinary.com/bakesale/image/upload/h_150,c_fill/fiber2_lwyreb"]
   },
