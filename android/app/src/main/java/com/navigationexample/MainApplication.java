@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.navigationexample;
 
 import android.app.Application;
 

@@ -5,16 +5,16 @@ import ContentItem from './ContentItem';
 
 class ContentList extends React.Component {
   static propTypes = {
-    deals: PropTypes.array.isRequired,
+    contentList: PropTypes.array.isRequired,
     onItemPress: PropTypes.func.isRequired,
   };
   render() {
     return (
       <View style={styles.list}>
         <FlatList
-          data={this.props.deals}
+          data={this.props.contentList}
           renderItem={({ item }) => (
-            <ContentItem deal={item} onPress={this.props.onItemPress} />
+            <ContentItem content={item} onPress={this.props.onItemPress} />
           )}
           ListFooterComponent={<View style={styles.footer}></View>}
         />

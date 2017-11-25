@@ -8,10 +8,9 @@ import {
 import ParsedText from 'react-native-parsed-text';
 
 
-
-class DealItem extends React.Component {
+class ContentItem extends React.Component {
   static propTypes = {
-    deal: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
     onPress: PropTypes.func.isRequired,
   };
   handleUrlPress(url) {
@@ -26,15 +25,15 @@ class DealItem extends React.Component {
    Linking.openURL(`mailto:${email}`);
  }
   handlePress = () => {
-    this.props.onPress(this.props.deal.key);
+    this.props.onPress(this.props.content.key);
   };
 
   render() {
-    const { deal } = this.props;
+    const { content } = this.props;
     return (
-      <TouchableOpacity style={styles.deal} onPress={this.handlePress}>
+      <TouchableOpacity style={styles.content} onPress={this.handlePress}>
         <View style={styles.info}>
-          <Text style={styles.title}>{deal.title}</Text>
+          <Text style={styles.title}>{content.title}</Text>
           <ParsedText
             style={styles.text}
             parse={
@@ -46,7 +45,7 @@ class DealItem extends React.Component {
             }
             childrenProps={{allowFontScaling: false}}
           >
-           { (deal.description)}
+           { (content.description)}
         </ParsedText>
         </View>
       </TouchableOpacity>
@@ -55,7 +54,7 @@ class DealItem extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  deal: {
+  content: {
     marginHorizontal: 12,
     marginTop: 12,
   },
@@ -91,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DealItem;
+export default ContentItem;
